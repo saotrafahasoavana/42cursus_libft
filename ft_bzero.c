@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 13:22:28 by saandria          #+#    #+#             */
-/*   Updated: 2024/02/27 09:39:37 by saandria         ###   ########.fr       */
+/*   Created: 2024/03/24 13:48:20 by saandria          #+#    #+#             */
+/*   Updated: 2024/03/24 13:49:52 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t			i;
-	unsigned char	*p;
-
-	i = 0;
-	p = (unsigned char *) s;
-	while (i != n)
-	{
-		p[i] = '\0';
-		i++;
-	}
+	ft_memset(s, '\0', n);
 }

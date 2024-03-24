@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 11:18:41 by saandria          #+#    #+#             */
-/*   Updated: 2024/02/28 09:06:42 by saandria         ###   ########.fr       */
+/*   Created: 2024/03/24 14:28:32 by saandria          #+#    #+#             */
+/*   Updated: 2024/03/24 14:36:05 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*occ;
 
-	occ = (void *) 0;
+	occ = (void *)0;
 	while (*s)
 	{
 		if (*(char *)s == (char)c)

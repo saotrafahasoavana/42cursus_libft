@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 14:19:57 by saandria          #+#    #+#             */
-/*   Updated: 2024/02/20 14:42:12 by saandria         ###   ########.fr       */
+/*   Created: 2024/03/24 14:47:19 by saandria          #+#    #+#             */
+/*   Updated: 2024/03/24 14:51:08 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*tmp1;
-	unsigned char	*tmp2;
+	size_t	i;
+	char	*t1;
+	char	*t2;
 
 	i = 0;
-	tmp1 = (unsigned char *) s1;
-	tmp2 = (unsigned char *) s2;
-	while (i < n)
+	t1 = (char *)s1;
+	t2 = (char *)s2;
+	while (i < n && (t1[i] || t2[i]))
 	{
-		if (tmp1[i] != tmp2[i])
-			return ((int)(tmp1[i] - tmp2[i]));
+		if (t1[i] != t2[i])
+			return (t1[i] - t2[i]);
 		i++;
 	}
 	return (0);

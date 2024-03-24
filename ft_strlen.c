@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 11:48:06 by saandria          #+#    #+#             */
-/*   Updated: 2024/02/19 12:54:24 by saandria         ###   ########.fr       */
+/*   Created: 2024/03/24 13:40:45 by saandria          #+#    #+#             */
+/*   Updated: 2024/03/24 13:42:59 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (!str)
+		return (0);
+	while (str[i])
 		i++;
 	return (i);
 }

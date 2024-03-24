@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 16:25:24 by saandria          #+#    #+#             */
-/*   Updated: 2024/02/20 16:27:50 by saandria         ###   ########.fr       */
+/*   Created: 2024/03/24 15:21:52 by saandria          #+#    #+#             */
+/*   Updated: 2024/03/24 15:24:40 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*ptr;
+	void	*res;
 
-	ptr = (void *)malloc(count * size);
-	if (ptr == NULL)
+	res = (void *)malloc(count * size);
+	if (res == NULL)
 		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	ft_bzero(res, count * size);
+	return (res);
 }

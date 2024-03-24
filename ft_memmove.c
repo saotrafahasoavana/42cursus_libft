@@ -5,34 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 14:36:23 by saandria          #+#    #+#             */
-/*   Updated: 2024/02/23 13:17:27 by saandria         ###   ########.fr       */
+/*   Created: 2024/03/24 14:05:51 by saandria          #+#    #+#             */
+/*   Updated: 2024/03/24 14:13:05 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
+	char	*s;
+	char 	*d;
 
 	if (!dest && !src)
 		return (0);
-	if (dest < src)
+	s = (char *)src;
+	d = (char *)dest;
+	if (d < s)
 	{
 		i = -1;
 		while (++i < n)
-			*(char *)(dest + i) = *(char *)(src + i);
+			d[i] = s[i];
 	}
 	else
 	{
-		i = n;
-		while (i > 0)
-		{
-			i--;
-			*(char *)(dest + i) = *(char *)(src + i);
-		}
+		i = n + 1;
+		while (--i > 0)
+			d[i] = s[i];
 	}
-	return (dest);
+	return ((void *)d);
 }

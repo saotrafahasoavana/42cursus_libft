@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 16:29:25 by saandria          #+#    #+#             */
-/*   Updated: 2024/02/20 16:30:41 by saandria         ###   ########.fr       */
+/*   Created: 2024/03/24 15:24:53 by saandria          #+#    #+#             */
+/*   Updated: 2024/03/24 15:28:42 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,19 @@
 char	*ft_strdup(const char *s)
 {
 	char	*dest;
+	size_t	i;
 
-	dest = malloc(ft_strlen(s) + 1);
-	if (dest == NULL)
+	if (!s)
 		return (NULL);
-	ft_strlcpy(dest, s, ft_strlen(s) + 1);
+	i = 0;
+	dest = (char *)malloc(sizeof(char) * ft_strlen(s));
+	if (!dest)
+		return (NULL);
+	while (s[i])
+	{
+		dest[i] = (char *)s[i];
+		i++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }
