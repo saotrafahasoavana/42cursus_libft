@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 14:23:37 by saandria          #+#    #+#             */
-/*   Updated: 2024/02/23 11:36:46 by saandria         ###   ########.fr       */
+/*   Created: 2024/03/30 14:56:10 by saandria          #+#    #+#             */
+/*   Updated: 2024/03/30 14:59:18 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!res || !s)
-		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	if (!s || !res)
+		return (NULL);
+	while (s[i])
 	{
 		res[i] = f(i, s[i]);
 		i++;

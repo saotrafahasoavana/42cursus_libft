@@ -5,58 +5,51 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 09:17:33 by saandria          #+#    #+#             */
-/*   Updated: 2024/02/28 08:55:32 by saandria         ###   ########.fr       */
+/*   Created: 2024/03/30 14:46:24 by saandria          #+#    #+#             */
+/*   Updated: 2024/03/30 14:55:40 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	absolute_value(int nbr)
+static int	len(int n)
 {
-	if (nbr < 0)
-		return (-nbr);
-	return (nbr);
-}
+	int	i;
 
-static int	get_len(int n)
-{
-	int	len;
-
-	len = 0;
+	i = 0;
 	if (n <= 0)
-		len++;
+		i++;
 	while (n != 0)
 	{
-		len++;
+		i++;
 		n = n / 10;
 	}
-	return (len);
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*result;
-	int		len;
+	char	*res;
+	int		i;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		return (ft_strdup("0"));
-	len = get_len(n);
-	result = (char *)malloc(len + 1);
-	if (!result)
+	i = len(n);
+	res = (char *)malloc(sizeof(char) * (i + 1));
+	if (!res)
 		return (NULL);
-	result[len] = '\0';
+	res[i] = '\0';
 	if (n < 0)
 	{
-		result[0] = '-';
+		res[0] = '-';
 		n *= -1;
 	}
-	while (len-- && result[len] != '-')
+	while (i-- && res[i] != '-')
 	{
-		result[len] = absolute_value(n % 10) + '0';
+		res[i] = (n % 10) + '0';
 		n = n / 10;
 	}
-	return (result);
+	return (res);
 }

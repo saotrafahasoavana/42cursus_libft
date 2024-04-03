@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 09:45:49 by saandria          #+#    #+#             */
-/*   Updated: 2024/02/21 09:52:25 by saandria         ###   ########.fr       */
+/*   Created: 2024/03/30 14:04:05 by saandria          #+#    #+#             */
+/*   Updated: 2024/03/30 14:08:59 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char		*sfinal;
-	size_t		i;
-	size_t		j;
+	char	*s;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	sfinal = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (sfinal == NULL)
+	if (!s1 && !s2)
 		return (NULL);
-	while (s1[i] != '\0')
+	s = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!s)
+		return (NULL);
+	while (s1[i])
 	{
-		sfinal[i] = s1[i];
+		s[i] = s1[i];
 		i++;
 	}
-	while (s2[j] != '\0')
+	while (s2[j])
 	{
-		sfinal[i + j] = s2[j];
+		s[i + j] = s2[j];
 		j++;
 	}
-	sfinal[i + j] = '\0';
-	return (sfinal);
+	s[i + j] = '\0';
+	return (s);
 }

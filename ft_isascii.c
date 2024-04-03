@@ -16,6 +16,6 @@ int	ft_isascii(int asc)
 {
 	if (asc >= 0 && asc <= 127)
 		return (1);
-	else 
+	else
 		return (0);
 }
